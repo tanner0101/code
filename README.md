@@ -1,4 +1,3 @@
 # Code
 
-A description of this package.
-# code
+A Swift code parser built on top of SourceKit.
