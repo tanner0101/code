@@ -6,6 +6,7 @@ let package = Package(
     products: [
         .library(name: "Code", targets: ["Code"]),
         .library(name: "Consoles", targets: ["Consoles"]),
+        .library(name: "Commands", targets: ["Commands"]),
     ],
     dependencies: [
         .package(url: "https://github.com/tanner0101/sourcekit.git", .branch("master")),
@@ -16,7 +17,9 @@ let package = Package(
     targets: [
         .target(name: "Code", dependencies: ["SourceKit", "Leaf", "Consoles", "Bits"]),
         .testTarget(name: "CodeTests", dependencies: ["Code"]),
-        .target(name: "Consoles", dependencies: ["Core"]),
+        .target(name: "Consoles", dependencies: ["Core", "Bits"]),
         .testTarget(name: "ConsolesTests", dependencies: ["Consoles"]),
+        .target(name: "Commands", dependencies: ["Core", "Consoles"]),
+        .testTarget(name: "CommandsTests", dependencies: ["Commands"]),
     ]
 )

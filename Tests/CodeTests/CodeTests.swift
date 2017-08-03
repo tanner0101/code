@@ -124,9 +124,6 @@ class CodeTests: XCTestCase {
         }
         dict["types"] = .array(typesData)
 
-        Leaf.defaultTags["contains"] = Contains()
-        Leaf.defaultTags["lowercase"] = Lowercase()
-
         let renderer = Leaf.Renderer(fileReader: TestFileReader())
         let view = try! renderer.render(template, context: Data.dictionary(dict))
         print(types)

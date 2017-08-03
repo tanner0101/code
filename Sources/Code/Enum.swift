@@ -12,4 +12,3 @@ public class Enum {
 public struct EnumCase {
 
 }
-
